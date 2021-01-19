@@ -1,0 +1,5 @@
+com\api\test\BaseUtilities.class
+com\api\test\ProjectCreationFCR.class
+com\api\test\LoginFCR.class
+com\api\test\CreateStudent.class
+com\api\test\GetStudentAPI.class

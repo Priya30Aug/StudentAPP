@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SmokeSuite" duration-ms="1615" started-at="2021-01-18T17:22:30Z" finished-at="2021-01-18T17:22:31Z">
+    <groups>
+    </groups>
+    <test name="SmokeTest" duration-ms="1615" started-at="2021-01-18T17:22:30Z" finished-at="2021-01-18T17:22:31Z">
+      <class name="com.api.test.UpdateStudent">
+        <test-method status="PASS" signature="Intialise()[pri:0, instance:com.api.test.UpdateStudent@204f30ec]" name="Intialise" is-config="true" duration-ms="498" started-at="2021-01-18T17:22:29Z" finished-at="2021-01-18T17:22:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Intialise -->
+        <test-method status="PASS" signature="UpdateStudentPayloadPOJO()[pri:0, instance:com.api.test.UpdateStudent@204f30ec]" name="UpdateStudentPayloadPOJO" duration-ms="1582" started-at="2021-01-18T17:22:30Z" finished-at="2021-01-18T17:22:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateStudentPayloadPOJO -->
+      </class> <!-- com.api.test.UpdateStudent -->
+    </test> <!-- SmokeTest -->
+  </suite> <!-- SmokeSuite -->
+</testng-results>
