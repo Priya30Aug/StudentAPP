@@ -1,7 +1,8 @@
 package com.api.model;
 
 public class LoginPOJO {
-	
+
+	private String username;
 	public String getUsername() {
 		return username;
 	}
@@ -14,7 +15,6 @@ public class LoginPOJO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	private String username;
 	private String password;
 	
 	

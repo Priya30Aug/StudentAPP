@@ -1,34 +1,43 @@
 package com.api.test;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 import com.api.model.ProjectCreationPOJO;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
-public class ProjectCreationFCR {
+public class ProjectCreationFCR extends LoginFCR {
 
-	@Test
-	public void Project_creation()
+	Integer repoid;
+	String reponame;
+	
+	@Test()
+	public void FcrProjectCreation()
+
 	{
 		
-		ProjectCreationPOJO projcreationpojo = new ProjectCreationPOJO();
-		projcreationpojo.setName("test_automation");
-		projcreationpojo.setRepoType("PUBLIC");
-		
-		RequestSpecification rs=given().header("Content-Type", "application/json").
-				header("FCRSESSIONID","YzdkNzZhZmUtMTc1Ny00ZDZlLWI2ZGItOGQ1YTZmODNjZDcz").
-				when().body(projcreationpojo);
-		
-		Response response= rs.post("https://fcr-qa.fareye.co/app/add_repo");
-		
-		System.out.println(response.getStatusCode());
+		System.out.println("--Project Creation API hit--");
 		
 
+		RequestSpecification ProjectCreationReq=given().urlEncodingEnabled(true).cookie(cookiedetail).
+				header("Content-Type","application/json").
 				
+				when().body("{\"name\":\"automation1\",\"repoType\":\"PRIVATE\"}");
 		
+		Response ProjectCreationResponse= ProjectCreationReq.post("/add_repo");
+	
+	
+		ValidatableResponse ValidatingProjectResponse = ProjectCreationResponse.then().log().all();
+		repoid=ValidatingProjectResponse.extract().path("id");
+		reponame=ValidatingProjectResponse.extract().path("name");
+	System.out.println("Repo id created :"+repoid + "for RepoName: "+reponame);
+	
+	Assert.assertEquals(reponame, "automation1");	
 
 	}
 

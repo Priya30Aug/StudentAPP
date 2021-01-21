@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [SmokeSuite]">
-  <test thread-count="5" name="SmokeTest(failed)">
+  <test thread-count="5" name="SmokeSuite_FCR(failed)">
     <classes>
-      <class name="com.api.test.UpdateStudent">
+      <class name="com.api.test.UploadJsonInFCR">
         <methods>
+          <include name="UploadJsonInFcr"/>
           <include name="Intialise"/>
-          <include name="UpdateStudentPayloadString"/>
+          <include name="FcrLogin"/>
+          <include name="FcrProjectCreation"/>
         </methods>
-      </class> <!-- com.api.test.UpdateStudent -->
+      </class> <!-- com.api.test.UploadJsonInFCR -->
     </classes>
-  </test> <!-- SmokeTest(failed) -->
+  </test> <!-- SmokeSuite_FCR(failed) -->
 </suite> <!-- Failed suite [SmokeSuite] -->

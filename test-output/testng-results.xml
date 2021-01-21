@@ -1,21 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="SmokeSuite" duration-ms="1615" started-at="2021-01-18T17:22:30Z" finished-at="2021-01-18T17:22:31Z">
+  <suite name="SmokeSuite" duration-ms="30468" started-at="2021-01-21T12:28:30Z" finished-at="2021-01-21T12:29:01Z">
     <groups>
     </groups>
-    <test name="SmokeTest" duration-ms="1615" started-at="2021-01-18T17:22:30Z" finished-at="2021-01-18T17:22:31Z">
-      <class name="com.api.test.UpdateStudent">
-        <test-method status="PASS" signature="Intialise()[pri:0, instance:com.api.test.UpdateStudent@204f30ec]" name="Intialise" is-config="true" duration-ms="498" started-at="2021-01-18T17:22:29Z" finished-at="2021-01-18T17:22:30Z">
+    <test name="SmokeSuite_FCR" duration-ms="30468" started-at="2021-01-21T12:28:30Z" finished-at="2021-01-21T12:29:01Z">
+      <class name="com.api.test.UploadJsonInFCR">
+        <test-method status="PASS" signature="Intialise()[pri:0, instance:com.api.test.UploadJsonInFCR@14bf9759]" name="Intialise" is-config="true" duration-ms="362" started-at="2021-01-21T12:28:30Z" finished-at="2021-01-21T12:28:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Intialise -->
-        <test-method status="PASS" signature="UpdateStudentPayloadPOJO()[pri:0, instance:com.api.test.UpdateStudent@204f30ec]" name="UpdateStudentPayloadPOJO" duration-ms="1582" started-at="2021-01-18T17:22:30Z" finished-at="2021-01-18T17:22:31Z">
+        <test-method status="PASS" signature="FcrLogin()[pri:0, instance:com.api.test.UploadJsonInFCR@14bf9759]" name="FcrLogin" is-config="true" duration-ms="17866" started-at="2021-01-21T12:28:30Z" finished-at="2021-01-21T12:28:48Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UpdateStudentPayloadPOJO -->
-      </class> <!-- com.api.test.UpdateStudent -->
-    </test> <!-- SmokeTest -->
+        </test-method> <!-- FcrLogin -->
+        <test-method status="PASS" signature="FcrProjectCreation()[pri:0, instance:com.api.test.UploadJsonInFCR@14bf9759]" name="FcrProjectCreation" duration-ms="2464" started-at="2021-01-21T12:28:48Z" finished-at="2021-01-21T12:28:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FcrProjectCreation -->
+        <test-method status="FAIL" signature="UploadJsonInFcr()[pri:0, instance:com.api.test.UploadJsonInFCR@14bf9759]" name="UploadJsonInFcr" duration-ms="10115" started-at="2021-01-21T12:28:50Z" depends-on-methods="com.api.test.ProjectCreationFCR.FcrProjectCreation" finished-at="2021-01-21T12:29:01Z">
+          <exception class="org.apache.http.ConnectionClosedException">
+            <message>
+              <![CDATA[Premature end of chunk coded message body: closing chunk expected]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.http.ConnectionClosedException: Premature end of chunk coded message body: closing chunk expected
+at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:266)
+at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:225)
+at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:184)
+at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+at org.apache.http.conn.EofSensorInputStream$read.call(Unknown Source)
+at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.convertStreamToByteArray(RestAssuredResponseOptionsGroovyImpl.groovy:472)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:149)
+at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:100)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:231)
+at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.charsetToString(RestAssuredResponseOptionsGroovyImpl.groovy:524)
+at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl$charsetToString$3.callCurrent(Unknown Source)
+at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.asString(RestAssuredResponseOptionsGroovyImpl.groovy:185)
+at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.asString(RestAssuredResponseOptionsGroovyImpl.groovy:181)
+at io.restassured.internal.RestAssuredResponseOptionsImpl.asString(RestAssuredResponseOptionsImpl.java:234)
+at io.restassured.response.ResponseBodyData$asString.call(Unknown Source)
+at io.restassured.internal.support.Prettifier.getPrettifiedBodyIfPossible(Prettifier.groovy:44)
+at io.restassured.internal.print.ResponsePrinter.print(ResponsePrinter.java:65)
+at io.restassured.internal.ValidatableResponseOptionsImpl.logResponse(ValidatableResponseOptionsImpl.java:400)
+at io.restassured.internal.ValidatableResponseOptionsImpl.logResponse(ValidatableResponseOptionsImpl.java:396)
+at io.restassured.internal.ValidatableResponseOptionsImpl.logResponse(ValidatableResponseOptionsImpl.java:392)
+at io.restassured.internal.ValidatableResponseOptionsImpl.all(ValidatableResponseOptionsImpl.java:348)
+at io.restassured.internal.ValidatableResponseImpl.super$2$all(ValidatableResponseImpl.groovy)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuper0(ScriptBytecodeAdapter.java:164)
+at io.restassured.internal.ValidatableResponseImpl.all(ValidatableResponseImpl.groovy:100)
+at io.restassured.internal.ValidatableResponseImpl.all(ValidatableResponseImpl.groovy)
+at com.api.test.UploadJsonInFCR.UploadJsonInFcr(UploadJsonInFCR.java:22)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.http.ConnectionClosedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UploadJsonInFcr -->
+      </class> <!-- com.api.test.UploadJsonInFCR -->
+    </test> <!-- SmokeSuite_FCR -->
   </suite> <!-- SmokeSuite -->
 </testng-results>

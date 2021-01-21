@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="SmokeSuite">
-	<test thread-count="5" name="SmokeTest">
+	<test name="SmokeSuite_FCR">
 		<classes>
-			<!-- <class name= "com.api.test.GetStudentAPI"/> 
-			<class name="com.api.test.CreateStudent" />-->
-			<class name="com.api.test.UpdateStudent" />
+	
+	<class name="com.api.test.UploadJsonInFCR"/>			
 		</classes>
 	</test>
-	<!-- <test name= "SmokeSuite_FCR"> <classes> <class name="com.api.test.ProjectCreationFCR"/> 
-		</classes></test> -->
 
 </suite> 
