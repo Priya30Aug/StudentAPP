@@ -15,18 +15,25 @@ import java.io.IOException;
 public class DownloadversionFCR extends ProjectCreationFCR{
 
 	
-	@Test
+	@Test(dependsOnMethods = {"UploadJsonInFcr"})
 	public void DownloadJson() throws IOException
+
 	{
-		RequestSpecification rs= given().cookie(cookiedetail).queryParam("repoId",repoid).header("Content-Type","application/json");
+		
+	System.out.println(repoid_output);
+		RequestSpecification rs= given().cookie(cookiedetail).queryParam("repoId",repoid_output).header("Content-Type","application/json");
 		
 				Response response=rs.get("/downloadOldCompanyJson");
-				ValidatableResponse validatable_resp=response.then().statusCode(200);
-			
-			
+				
 				String responseBody=response.body().asString();
+				int downloadjsonStatusCode=response.getStatusCode();
+				
+				
+				System.out.println("DownloadJson api status code is: "+downloadjsonStatusCode);
+			
+				ValidatableResponse validatable_resp=response.then().statusCode(200);	
 				File file= new File(System.getProperty("user.dir")+"/src/test/resources/PayloadDownloaded");
-			FileWriter filewriter= new FileWriter(file+"/output"+reponame+repoid+".json");
+			FileWriter filewriter= new FileWriter(file+"/output"+reponame_output+repoid_output+".json");
 			
 			filewriter.flush();
 			filewriter.close();

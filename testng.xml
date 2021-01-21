@@ -3,8 +3,8 @@
 <suite name="SmokeSuite">
 	<test name="SmokeSuite_FCR">
 		<classes>
-	
-	<class name="com.api.test.UploadJsonInFCR"/>			
+		<class name="com.api.test.APIKeyFCR"/>	
+				
 		</classes>
 	</test>
 

@@ -16,7 +16,7 @@ public class UploadJsonInFCR extends ProjectCreationFCR {
 				System.getProperty("user.dir") + "/src/test/resources/PayloadsToUpload/Configuration(qatested).json");
 		System.out.println(jsonDataInFile);
 
-		given().queryParam("repoId", repoid).cookie(cookiedetail).header("Content-Type", "application/json")
+		given().queryParam("repoId", repoid_output).cookie(cookiedetail).header("Content-Type", "application/json")
 				.body(jsonDataInFile).when().post("/uploadCompanyJson").
 
 				then().log().all().assertThat().statusCode(200);

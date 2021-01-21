@@ -3,14 +3,14 @@
 <suite name="Failed suite [SmokeSuite]">
   <test thread-count="5" name="SmokeSuite_FCR(failed)">
     <classes>
-      <class name="com.api.test.UploadJsonInFCR">
+      <class name="com.api.test.APIKeyFCR">
         <methods>
-          <include name="UploadJsonInFcr"/>
+          <include name="FetchFcrApiKey"/>
           <include name="Intialise"/>
           <include name="FcrLogin"/>
           <include name="FcrProjectCreation"/>
         </methods>
-      </class> <!-- com.api.test.UploadJsonInFCR -->
+      </class> <!-- com.api.test.APIKeyFCR -->
     </classes>
   </test> <!-- SmokeSuite_FCR(failed) -->
 </suite> <!-- Failed suite [SmokeSuite] -->
