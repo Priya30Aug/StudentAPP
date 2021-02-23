@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="SmokeSuite">
-	<test name="SmokeSuite_FCR">
-		<classes>
-		<class name="com.api.test.APIKeyFCR"/>	
-				
-		</classes>
-	</test>
+	<!-- <test name="Delete_CreatedProject"> <classes> <class name="com.api.test.DeleteProjectFCR" 
+		/> </classes> </test> -->
 
+	<test name="Upload/Download_for_CreatedProject"> <classes> <class name="com.api.test.UploadJsonInFCR" 
+		/> </classes> </test> 
+
+<!-- 	<test name="FCRapiKey_for_CreatedProject">
+		<classes>
+			<class name="com.api.test.APIKeyFCR" />
+		</classes>
+	</test> -->
 </suite> 

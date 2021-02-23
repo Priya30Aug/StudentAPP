@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-SmokeSuite">
-              <span class="suite-name border-passed">SmokeSuite</span>
+              <span class="suite-name border-failed">SmokeSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SmokeSuite" class="hide-methods failed suite-SmokeSuite"> (hide)</a> <!-- hide-methods failed suite-SmokeSuite -->
+                      <a href="#" panel-name="suite-SmokeSuite" class="show-methods failed suite-SmokeSuite"> (show)</a> <!-- show-methods failed suite-SmokeSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-SmokeSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeSuite" title="com.api.test.UploadJsonInFCR" hash-for-method="DownloadJson">DownloadJson</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeSuite" title="com.api.test.UploadJsonInFCR" hash-for-method="UploadJson">UploadJson</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SmokeSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +121,12 @@
                     <div class="method-list-content passed suite-SmokeSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-SmokeSuite" title="com.api.test.APIKeyFCR" hash-for-method="FcrProjectCreation">FcrProjectCreation</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeSuite" title="com.api.test.UploadJsonInFCR" hash-for-method="FcrProjectCreation">FcrProjectCreation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-SmokeSuite" title="com.api.test.APIKeyFCR" hash-for-method="FetchFcrApiKey">FetchFcrApiKey</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeSuite" title="com.api.test.UploadJsonInFCR" hash-for-method="GenerateFcrApiKey">GenerateFcrApiKey</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-SmokeSuite -->
@@ -122,10 +141,92 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SmokeSuite" class="panel SmokeSuite">
+          <div class="suite-SmokeSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.api.test.UploadJsonInFCR</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="DownloadJson">
+                  </a> <!-- DownloadJson -->
+                  <span class="method-name">DownloadJson</span>
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at com.api.test.UploadJsonInFCR.DownloadJson(UploadJsonInFCR.java:61)
+... Removed 40 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="UploadJson">
+                  </a> <!-- UploadJson -->
+                  <span class="method-name">UploadJson</span>
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;400&gt;.
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at com.api.test.UploadJsonInFCR.UploadJson(UploadJsonInFCR.java:35)
+... Removed 40 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeSuite-class-failed -->
           <div class="suite-SmokeSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.api.test.APIKeyFCR</span>
+              <span class="class-name">com.api.test.UploadJsonInFCR</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -137,9 +238,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="FetchFcrApiKey">
-                  </a> <!-- FetchFcrApiKey -->
-                  <span class="method-name">FetchFcrApiKey</span>
+                  <a name="GenerateFcrApiKey">
+                  </a> <!-- GenerateFcrApiKey -->
+                  <span class="method-name">GenerateFcrApiKey</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -154,11 +255,11 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;SmokeSuite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;SmokeSuite_FCR&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Upload/Download_for_CreatedProject&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.api.test.APIKeyFCR&quot;/&gt;
+      &lt;class name=&quot;com.api.test.UploadJsonInFCR&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- SmokeSuite_FCR --&gt;
+  &lt;/test&gt; &lt;!-- Upload/Download_for_CreatedProject --&gt;
 &lt;/suite&gt; &lt;!-- SmokeSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -170,7 +271,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">SmokeSuite_FCR (1 class)</span>
+                <span class="test-name">Upload/Download_for_CreatedProject (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -196,20 +297,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'FcrProjectCreation')
-data.setCell(0, 2, 'com.api.test.APIKeyFCR')
-data.setCell(0, 3, 3564);
+data.setCell(0, 1, 'UploadJson')
+data.setCell(0, 2, 'com.api.test.UploadJsonInFCR')
+data.setCell(0, 3, 4047);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'FetchFcrApiKey')
-data.setCell(1, 2, 'com.api.test.APIKeyFCR')
-data.setCell(1, 3, 2037);
+data.setCell(1, 1, 'FcrProjectCreation')
+data.setCell(1, 2, 'com.api.test.UploadJsonInFCR')
+data.setCell(1, 3, 2562);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'GenerateFcrApiKey')
+data.setCell(2, 2, 'com.api.test.UploadJsonInFCR')
+data.setCell(2, 3, 1831);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'DownloadJson')
+data.setCell(3, 2, 'com.api.test.UploadJsonInFCR')
+data.setCell(3, 3, 1632);
 window.suiteTableData['SmokeSuite']= { tableData: data, tableDiv: 'times-div-SmokeSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-SmokeSuite">
               </div> <!-- times-div-SmokeSuite -->
             </div> <!-- times-div -->
@@ -235,23 +344,39 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.api.test.APIKeyFCR</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.api.test.UploadJsonInFCR</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">Intialise</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">FcrLogin</span>
-                <span class="method-start">400 ms</span>
+                <span class="method-start">457 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">FcrProjectCreation</span>
-                <span class="method-start">18264 ms</span>
+                <span class="method-start">18266 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">FetchFcrApiKey</span>
-                <span class="method-start">21830 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">UploadJson</span>
+                <span class="method-start">20830 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">DownloadJson</span>
+                <span class="method-start">24880 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">GenerateFcrApiKey</span>
+                <span class="method-start">26515 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <span class="method-name">End</span>
+                <span class="method-start">28371 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

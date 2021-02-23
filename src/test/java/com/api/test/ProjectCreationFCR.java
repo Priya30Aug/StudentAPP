@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 import com.api.model.ProjectCreationPOJO;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -22,6 +24,8 @@ public class ProjectCreationFCR extends LoginFCR {
 	public void FcrProjectCreation()
 
 	{
+		extenttest=extentreports.startTest("Project creation api start executing");
+
 		System.out.println("--Project Creation API hit--");
 		fcr_reponame_inputted=prop.getProperty("FCR_reponame");
 		fcr_repotype_inputted=prop.getProperty("FCR_repotype");
@@ -44,7 +48,13 @@ public class ProjectCreationFCR extends LoginFCR {
 	System.out.println("Repo id created :"+repoid_output + " for RepoName: "+reponame_output);
 	
 	Assert.assertEquals(reponame_output,fcr_reponame_inputted );	
-
+	int ResponseStatuscode=ProjectCreationResponse.getStatusCode();
+	if(ResponseStatuscode==200)
+	{
+  extenttest.log(LogStatus.PASS, "Project created successfully");
 	}
-
+	else {
+		extenttest.log(LogStatus.FAIL, "Project isn't created");
+	}
+	}
 }

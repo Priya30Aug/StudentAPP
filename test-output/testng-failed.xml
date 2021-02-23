@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [SmokeSuite]">
-  <test thread-count="5" name="SmokeSuite_FCR(failed)">
+  <test thread-count="5" name="Upload/Download_for_CreatedProject(failed)">
     <classes>
-      <class name="com.api.test.APIKeyFCR">
+      <class name="com.api.test.UploadJsonInFCR">
         <methods>
-          <include name="FetchFcrApiKey"/>
+          <include name="DownloadJson"/>
           <include name="Intialise"/>
+          <include name="End"/>
+          <include name="UploadJson"/>
           <include name="FcrLogin"/>
           <include name="FcrProjectCreation"/>
         </methods>
-      </class> <!-- com.api.test.APIKeyFCR -->
+      </class> <!-- com.api.test.UploadJsonInFCR -->
     </classes>
-  </test> <!-- SmokeSuite_FCR(failed) -->
+  </test> <!-- Upload/Download_for_CreatedProject(failed) -->
 </suite> <!-- Failed suite [SmokeSuite] -->

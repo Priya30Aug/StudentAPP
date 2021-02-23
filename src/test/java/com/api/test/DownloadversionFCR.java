@@ -14,8 +14,8 @@ import java.io.IOException;
 
 public class DownloadversionFCR extends ProjectCreationFCR{
 
+	@Test(dependsOnMethods = {"UploadJson" })
 	
-	@Test(dependsOnMethods = {"UploadJsonInFcr"})
 	public void DownloadJson() throws IOException
 
 	{
